@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, TextInput, Pressable, ScrollView } from "react-native";
-import socket from "./socket"; // Certifique-se de que este é o seu cliente Socket.IO
+import socket from "./socket"; 
 
 export default function App() {
     const [room1] = useState('room1');
