@@ -17,7 +17,7 @@ io.on("connection", (socket) => {
     socket.on('send_message', ({ room, message }) => {
         console.log(`Mensagem recebida na ${room}: ${message}`);
         
-        // Emite a mensagem para a outra sala
+        
         if (room === 'room1') {
             io.to('room2').emit('receive_message', { room: 'room2', message });
         } else {
