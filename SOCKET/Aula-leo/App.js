@@ -33,9 +33,9 @@ export default function App() {
         socket.on('receive_message', (msg) => {
             console.log('Mensagem recebida:', msg);
             if (msg.room === room1) {
-                setMessages2((prev) => [...prev, msg.message]); // Armazena na lista de room2
+                setMessages1((prev) => [...prev, msg.message]); // Armazena na lista de room2
             } else if (msg.room === room2) {
-                setMessages1((prev) => [...prev, msg.message]); // Armazena na lista de room1
+                setMessages2((prev) => [...prev, msg.message]); // Armazena na lista de room1
             }
         });
 
@@ -46,7 +46,7 @@ export default function App() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Chat Room 1</Text>
+            <Text style={styles.title}>Chris Brown</Text>
             <ScrollView style={styles.messageList}>
                 {messages1.map((msg, index) => (
                     <Text key={index}>{msg}</Text>
@@ -62,7 +62,7 @@ export default function App() {
                 <Text style={styles.buttonText}>Enviar mensagem</Text>
             </Pressable>
 
-            <Text style={styles.title}>Chat Room 2</Text>
+            <Text style={styles.title}>Rihanna</Text>
             <ScrollView style={styles.messageList}>
                 {messages2.map((msg, index) => (
                     <Text key={index}>{msg}</Text>
